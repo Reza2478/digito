@@ -1,11 +1,16 @@
-import "./App.css";
+//Components
+import Header from "./Components/header/Header";
+import Sortfilter from "./Components/Sortfilter";
+import Content from "./Components/content/Content";
+import React from "react";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline text-slate-500">
-        Hello world!
-      </h1>
+    <div>
+      <Header />
+      <Sortfilter />
+      <Content />
     </div>
   );
 }

@@ -4,14 +4,16 @@ import Sortfilter from "./Components/Sortfilter";
 import Content from "./Components/content/Content";
 import React from "react";
 
+//Context
+import ProductContextProvider from "./Context/ProductContextProvider";
 
 function App() {
   return (
-    <div>
+    <ProductContextProvider>
       <Header />
       <Sortfilter />
       <Content />
-    </div>
+    </ProductContextProvider>
   );
 }
 

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+
+//Context
+import { FilterContext } from "../../../Context/FilterContextProvider";
 
 const Filters = ({ items, title }) => {
   const [selected, setSelected] = useState(true);
   const [price, setPrice] = useState(0);
+  const { dispatch } = useContext(FilterContext);
 
   const selectHandler = () => {
     setSelected(!selected);
@@ -10,6 +14,7 @@ const Filters = ({ items, title }) => {
 
   const changeHandler = (event) => {
     setPrice(event.target.value);
+    dispatch({ type: "PRICE", payload: price });
   };
   return (
     <div>
@@ -36,7 +41,15 @@ const Filters = ({ items, title }) => {
               title !== "محدوده قیمت" &&
               items.map((item) => (
                 <li key={item} className="mb-3">
-                  <input type="checkbox" className=" rounded text-orange-500 focus:ring-orange-500" name={title} id={item} />
+                  <input
+                    onClick={() => {
+                      title === "برند محصول" ? dispatch({ type: "BRAND", payload: item }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: item });
+                    }}
+                    type="checkbox"
+                    className=" rounded text-orange-500 focus:ring-orange-500"
+                    name={title}
+                    id={item}
+                  />
                   <label className="mr-2 text-slate-800" htmlFor={item}>
                     {item}
                   </label>

@@ -21,3 +21,30 @@ export const toInteger = (value) => {
   const n = parseInt(value).toLocaleString();
   return(n.toString().replace(/\d/g, (x) => farsiDigits[x]));
 };
+
+export const searchFilter=(state,products)=>{
+  const{searchInput,category,colors,brand,priceRange}=state;
+  // console.log(state);
+  let newProducts=products;
+  switch (category) {
+    case "all":
+       newProducts=products;
+       break;
+    case "mobile":
+       newProducts=products.filter(item=>item.model.includes('موبایل')) 
+       break;
+       case "laptop":
+        newProducts=products.filter(item=>item.model.includes('لپ تاپ')) 
+        break;
+        case "watch":
+          newProducts=products.filter(item=>item.model.includes('ساعت')) 
+          break;
+    default:
+      break;
+  }
+  if(searchInput!==''){
+    newProducts=products.filter(item=>item.model.includes(searchInput)) 
+  }
+  return newProducts
+  
+}

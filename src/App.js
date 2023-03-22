@@ -6,13 +6,16 @@ import React from "react";
 
 //Context
 import ProductContextProvider from "./Context/ProductContextProvider";
+import FilterContextProvider from "./Context/FilterContextProvider";
 
 function App() {
   return (
     <ProductContextProvider>
-      <Header />
-      <Sortfilter />
-      <Content />
+      <FilterContextProvider>
+        <Header />
+        <Sortfilter />
+        <Content />
+      </FilterContextProvider>
     </ProductContextProvider>
   );
 }

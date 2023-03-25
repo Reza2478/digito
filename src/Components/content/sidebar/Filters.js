@@ -14,12 +14,19 @@ const Filters = ({ items, title }) => {
 
   const changeHandler = (event, status) => {
     console.log();
-    if (status === "min") setPrice({ min: event.target.value,max:price.max });
-    else setPrice({ min:price.min ,max: event.target.value });
+    if (status === "min") setPrice({ min: event.target.value, max: price.max });
+    else setPrice({ min: price.min, max: event.target.value });
     dispatch({ type: "PRICE", payload: price });
   };
 
-  
+  const checkHandler = (event, item) => {
+    if (event.target.checked) title === "برند محصول" ? dispatch({ type: "BRAND", payload: {name:item,check:true} }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: {name:item,check:true} });
+    else {
+      console.log("not checkd");
+      title === "برند محصول" ? dispatch({ type: "BRAND", payload: {name:item,check:false} }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: {name:item,check:false} })
+    }
+  };
+
 
   return (
     <div>
@@ -46,15 +53,7 @@ const Filters = ({ items, title }) => {
               title !== "محدوده قیمت" &&
               items.map((item) => (
                 <li key={item} className="mb-3">
-                  <input
-                    onClick={() => {
-                      title === "برند محصول" ? dispatch({ type: "BRAND", payload: item }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: item });
-                    }}
-                    type="checkbox"
-                    className=" rounded text-orange-500 focus:ring-orange-500"
-                    name={title}
-                    id={item}
-                  />
+                  <input onClick={(event) => checkHandler(event, item)} type="checkbox" className=" rounded text-orange-500 focus:ring-orange-500" name={title} id={item} />
                   <label className="mr-2 text-slate-800" htmlFor={item}>
                     {item}
                   </label>
@@ -66,7 +65,7 @@ const Filters = ({ items, title }) => {
                   <span className="mx-1">0</span>
                   <div className="flex w-full">
                     <input onChange={(event) => changeHandler(event, "min")} id="minmax-range" type="range" min="0" max="50" value={price.min} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
-                    <input onChange={(event) => changeHandler(event,"max")} id="minmax-range" type="range" min="50" max="100" value={price.max} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
+                    <input onChange={(event) => changeHandler(event, "max")} id="minmax-range" type="range" min="50" max="100" value={price.max} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
                   </div>
                   <span className="mx-1">100</span>
                 </div>

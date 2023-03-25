@@ -22,31 +22,9 @@ const Product = ({ productData }) => {
       <div className="flex justify-between p-2">
         <span className="text-xs text-slate-200 sm:text-base">{brand}</span>
         <div className="flex items-center justify-center">
-          <span className="ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-white bg-green-300 sm:h-7 sm:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 stroke-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <span className="ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-white bg-indigo-600 sm:h-7 sm:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 stroke-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <span className="ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-white bg-yellow-400 sm:h-7 sm:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 stroke-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <span className="ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-white bg-orange-400 sm:h-7 sm:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 stroke-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white bg-gray-400 sm:h-7 sm:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 stroke-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
+          {colors.map((item,id) => (
+            <span key={id} className={`ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full ${item} border border-white  sm:h-7 sm:w-7`}></span>
+          ))}
         </div>
       </div>
       {/*details*/}

@@ -12,7 +12,7 @@ const Sidebar = () => {
         <div className="mb-5">
           <div className="mb-5 text-xl font-bold text-orange-400">فیلتر</div>
           <Filters title="برند محصول" items={["اپل", "سامسونگ", "شیائومی", "هواوی"]} />
-          <Filters title="رنگ محصول" items={["نقره ای", "سفید", "قرمز", "مشکی"]} />
+          <Filters title="رنگ محصول" items={["نقره ای", "سفید", "قرمز", "خاکستری", "سبز"]} />
           <Filters title="محدوده قیمت" />
         </div>
       </div>

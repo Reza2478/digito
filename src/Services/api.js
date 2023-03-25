@@ -4,7 +4,7 @@ export const products = [
     model: "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
     brand: "apple",
     price: "48650000",
-    colors: ["مشکی", "سفید", "آبی", "صورتی"],
+    colors: ["bg-gray-400", "bg-stone-100", "bg-green-400", "bg-red-400"],
     details: {
       OS: "ios 15",
       size: "6.1",
@@ -18,7 +18,7 @@ export const products = [
     model: "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
     brand: "samsung",
     price: "21500000",
-    colors: ["خاکستری", "زیتونی"],
+    colors: ["bg-gray-400", "bg-stone-100","bg-red-400"],
     details: {
       OS: "Android 12",
       size: "6.4",
@@ -32,7 +32,7 @@ export const products = [
     model: "گوشی موبایل سامسونگ مدل Galaxy A73 5G SM-A736B/DS دو سیم کارت ظرفیت 128 گیگابایت و رم 8 گیگابایت",
     brand: "samsung",
     price: "18899000",
-    colors: ["خاکستری"],
+    colors: ["bg-gray-400","bg-zinc-200"],
     details: {
       OS: "Android 12",
       size: "6.7",
@@ -47,7 +47,7 @@ export const products = [
     model: "لپ تاپ 15.6 اینچی ایسوس مدل TUF FX506HC-F15-153050",
     brand: "asus",
     price: "44990000",
-    colors: ["خاکستری"],
+    colors: ["bg-gray-400","bg-stone-100"],
     details: {
       series: "Core i5",
       ram: "8 گیگابایت",
@@ -62,7 +62,7 @@ export const products = [
     model: "لپ تاپ 15.6 اینچی ایسوس مدل X543MA-GQ1012",
     brand: "asus",
     price: "13250000",
-    colors: ["خاکستری"],
+    colors: ["bg-gray-400"],
     details: {
       series: "Celeron",
       ram: "4 گیگابایت",
@@ -77,7 +77,7 @@ export const products = [
     model: "لپ تاپ 15.6 اینچی اچ‌پی مدل Victus 15-FA0031DX",
     brand: "hp",
     price: "42000000",
-    colors: ["خاکستری"],
+    colors: ["bg-gray-400","bg-red-400"],
     details: {
       series: "Core i5",
       ram: "8 گیگابایت",
@@ -92,7 +92,7 @@ export const products = [
     model: "لپ تاپ 12.4 اینچی مایکروسافت مدل Surface Laptop Go - B",
     brand: "microsoft",
     price: "34900000",
-    colors: ["نقره ای"],
+    colors: ["bg-zinc-200","bg-stone-100","bg-gray-400"],
     details: {
       series: "Core i5",
       ram: "8 گیگابایت",
@@ -107,7 +107,7 @@ export const products = [
     model: "لپ تاپ 16.2 اینچی اپل مدل MacBook Pro Mk183 2021",
     brand: "apple",
     price: "109000000",
-    colors: ["خاکستری"],
+    colors: ["bg-gray-400","bg-slate-400","bg-stone-100"],
     details: {
       series: "M1",
       ram: "16 گیگابایت",
@@ -123,7 +123,7 @@ export const products = [
     model: "ساعت هوشمند سامسونگ مدل Galaxy Watch5 44mm",
     brand: "samsung",
     price: "7990000",
-    colors: ["مشکی", "آبی", "نقره ای"],
+    colors: ["bg-gray-400", "bg-red-400", "bg-green-400"],
     details: {
       usage: "رسمی، روزمره، ورزشی",
       screen: "دایره",
@@ -136,7 +136,7 @@ export const products = [
     model: "ساعت هوشمند شیائومی مدل Redmi Watch 2 Lite بند سلیکونی",
     brand: "xiaomi",
     price: "2594000",
-    colors: ["مشکی", "سورمه ای", "استخوانی"],
+    colors: ["bg-gray-400", "bg-red-400", "bg-stone-100"],
     details: {
       usage: "روزمره، ورزشی",
       screen: "مستطیل",
@@ -149,7 +149,7 @@ export const products = [
     model: "ساعت هوشمند اپل واچ مدل Ultra 49 mm Alpine Loop",
     brand: "apple",
     price: "40000000",
-    colors: ["نازنجی", "سبز", "بژ"],
+    colors: ["bg-stone-100", "bg-green-400", "bg-red-400"],
     details: {
       usage: "رسمی، روزمره، ورزشی",
       screen: "مستطیل",

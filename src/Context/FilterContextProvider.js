@@ -11,8 +11,9 @@ const initialState = {
 export const FilterContext = createContext();
 
 const reducer = (state, action) => {
-  console.log(state);
+ 
   switch (action.type) {
+    
     case "SEARCH_INPUT":
       return { ...state, searchInput: action.payload };
     case "CATEGORY":

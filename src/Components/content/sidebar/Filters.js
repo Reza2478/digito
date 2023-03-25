@@ -5,17 +5,22 @@ import { FilterContext } from "../../../Context/FilterContextProvider";
 
 const Filters = ({ items, title }) => {
   const [selected, setSelected] = useState(true);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState({ min: 0, max: 100 });
   const { dispatch } = useContext(FilterContext);
 
   const selectHandler = () => {
     setSelected(!selected);
   };
 
-  const changeHandler = (event) => {
-    setPrice(event.target.value);
+  const changeHandler = (event, status) => {
+    console.log();
+    if (status === "min") setPrice({ min: event.target.value,max:price.max });
+    else setPrice({ min:price.min ,max: event.target.value });
     dispatch({ type: "PRICE", payload: price });
   };
+
+  
+
   return (
     <div>
       <div>
@@ -59,12 +64,18 @@ const Filters = ({ items, title }) => {
               <div>
                 <div className="flex items-center justify-between">
                   <span className="mx-1">0</span>
-                  <input onChange={changeHandler} id="minmax-range" type="range" min="0" max="100" value={price} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
+                  <div className="flex w-full">
+                    <input onChange={(event) => changeHandler(event, "min")} id="minmax-range" type="range" min="0" max="50" value={price.min} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
+                    <input onChange={(event) => changeHandler(event,"max")} id="minmax-range" type="range" min="50" max="100" value={price.max} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
+                  </div>
                   <span className="mx-1">100</span>
                 </div>
                 <div className="flex justify-center flex-col items-center p-3">
                   <span className="text-sm font-bold">انتخاب شما:</span>
-                  <p className="text-md font-bold">{price} میلیون تومان</p>
+                  <p className="text-lg font-bold mt-6">
+                    از {price.min} تا {price.max}{" "}
+                  </p>
+                  <p className="text-md ">میلیون تومان</p>
                 </div>
               </div>
             )}

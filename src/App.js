@@ -1,8 +1,8 @@
-//Components
-import Header from "./Components/header/Header";
-import Sortfilter from "./Components/Sortfilter";
-import Content from "./Components/content/Content";
 import React from "react";
+import {Routes ,Route} from 'react-router-dom'
+
+//Components
+import Home from "./Pages/Home";
 
 //Context
 import ProductContextProvider from "./Context/ProductContextProvider";
@@ -12,9 +12,10 @@ function App() {
   return (
     <ProductContextProvider>
       <FilterContextProvider>
-        <Header />
-        <Sortfilter />
-        <Content />
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/products/:id" />
+        </Routes>
       </FilterContextProvider>
     </ProductContextProvider>
   );

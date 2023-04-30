@@ -13,6 +13,7 @@ import Products from "./Products";
 //Helper
 import { searchFilter } from "../helper/functions";
 
+
 const Content = () => {
   const products = useContext(productsContext);
   const {state}=useContext(FilterContext)
@@ -24,6 +25,7 @@ const Content = () => {
       <Sidebar />
       <Selectfilter />
       <Products products={filteredProducts} />
+ 
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BottomNav = () => {
+const BottomNav = ({active}) => {
   const [selected, setSelected] = useState("home");
 
   const changeHandler = (value) => {
@@ -8,7 +8,7 @@ const BottomNav = () => {
   };
 
   return (
-    <div className="sticky bottom-0 right-0 left-0 w-full rounded-tl-md rounded-tr-md border border-t-2 bg-white px-4 py-2 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.1)] md:hidden">
+    <div className={`sticky bottom-0 right-0 left-0 w-full rounded-tl-md rounded-tr-md border border-t-2 bg-white px-4 py-2 shadow-[0_-4px_8px_0px_rgba(0,0,0,0.1)] md:hidden ${active?'hidden':'block'}`}>
       <nav className="w-full">
         <ul className="flex w-full items-center justify-between gap-x-2">
           <li onClick={()=>changeHandler("home")} className={`${selected === "home" ? "text-slate-800" : "text-gray-400"} flex-auto text-sm`}>

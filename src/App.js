@@ -3,6 +3,7 @@ import {Routes ,Route} from 'react-router-dom'
 
 //Components
 import Home from "./Pages/Home";
+import Category from "./Pages/Category";
 
 //Context
 import ProductContextProvider from "./Context/ProductContextProvider";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/products/:id" />
+          <Route path='/category' element={<Category/>} />
         </Routes>
       </FilterContextProvider>
     </ProductContextProvider>

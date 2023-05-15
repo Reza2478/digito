@@ -10,5 +10,6 @@ module.exports = {
     require("@tailwindcss/forms")({
       strategy: "base", // only generate global styles
     }),
+    require('tailwind-scrollbar-hide')
   ],
 }

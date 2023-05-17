@@ -15,6 +15,7 @@ const Home = () => {
       <Content />
       <Filtersection active={active} setActive={setActive} />
       <BottomNav active={active} />
+      
     </React.Fragment>
   );
 };

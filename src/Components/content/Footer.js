@@ -5,7 +5,7 @@ import Location from "../../assets/images/location.png";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col max-w-screen-2xl container bg-white p-8 md:flex-row">
+    <div className="flex flex-col max-w-screen-2xl mx-auto container bg-white p-8 md:flex-row">
       <div className=" p-8 text-slate-800">
         <div className="mb-8 flex flex-col items-start justify-start gap-y-4">
           <p className=" text-2xl font-bold text-orange-500 drop-shadow-lg">دیجیتو</p>

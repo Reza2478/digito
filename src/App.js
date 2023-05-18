@@ -5,6 +5,7 @@ import {Routes ,Route} from 'react-router-dom'
 import Home from "./Pages/Home";
 import Category from "./Pages/Category";
 import Productdetail from "./Pages/Productdetail";
+import Shopcart from "./Pages/Shopcart";
 
 //Context
 import ProductContextProvider from "./Context/ProductContextProvider";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/products/:id" element={<Productdetail/>} />
           <Route path='/category' element={<Category/>} />
+          <Route path='/shopcart' element={<Shopcart/>} />
         </Routes>
       </FilterContextProvider>
     </ProductContextProvider>

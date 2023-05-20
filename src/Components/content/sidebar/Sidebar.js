@@ -4,6 +4,7 @@ import React from "react";
 import Categories from "./Categories";
 import Filters from "./Filters";
 
+
 const Sidebar = () => {
   return (
     <div className="col-span-4 row-span-2 hidden md:block lg:col-span-3 xl:col-span-2">

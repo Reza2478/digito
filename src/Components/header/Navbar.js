@@ -6,6 +6,7 @@ import { FilterContext } from "../../Context/FilterContextProvider";
 //Images
 import Shopicon from "../../assets/images/shopping-cart.png";
 import { Link } from "react-router-dom";
+import Logo from '../../assets/images/logo.png'
 
 const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
@@ -21,7 +22,7 @@ const Navbar = () => {
         <ul className="flex items-center justify-center gap-x-2 text-slate-800 lg:gap-x-3 lg:text-lg">
           <li>
             <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
-              Logo
+              <img className="w-14" src={Logo} alt='logo'/>
             </a>
           </li>
           <li>

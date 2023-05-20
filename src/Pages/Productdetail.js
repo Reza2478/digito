@@ -3,7 +3,7 @@ import React from "react";
 //Component
 import Appbar from "../Components/header/Appbar";
 import Navbar from "../Components/header/Navbar";
-import Advertising from "../Components/content/product/Advertising";
+import Advertising from "../Components/content/Advertising";
 import Breadcrumbs from "../Components/content/product/Breadcrumbs";
 import Information from "../Components/content/product/Information";
 import Footer from "../Components/content/Footer";

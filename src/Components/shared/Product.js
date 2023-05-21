@@ -3,6 +3,7 @@ import React from "react";
 //Helper
 import { textSplitter } from "../helper/functions";
 import { toInteger } from "../helper/functions";
+import { Link } from "react-router-dom";
 
 const Product = ({ productData }) => {
   const { id, brand, colors, details, images, price, model } = productData;
@@ -22,7 +23,7 @@ const Product = ({ productData }) => {
       <div className="flex justify-between p-2">
         <span className="text-xs text-slate-200 sm:text-base">{brand}</span>
         <div className="flex items-center justify-center">
-          {colors.map((item,id) => (
+          {colors.map((item, id) => (
             <span key={id} className={`ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full ${item} border border-white  sm:h-7 sm:w-7`}></span>
           ))}
         </div>
@@ -37,7 +38,7 @@ const Product = ({ productData }) => {
         <span className="mr-1 text-xs text-orange-700 sm:text-sm">تومان</span>
       </div>
       <hr className="mx-2" />
-      <button className="w-full py-2 text-sm font-bold text-orange-400 sm:text-lg">مشاهده محصول</button>
+      <Link to={`/products/${id}`} className="w-full py-2 text-center text-sm font-bold text-orange-400 sm:text-lg">مشاهده محصول</Link>
     </div>
   );
 };

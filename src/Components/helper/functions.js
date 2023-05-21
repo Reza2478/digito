@@ -90,3 +90,14 @@ export const searchFilter = (state, products) => {
   }
   return newProducts;
 };
+
+export const colorExtraction = (item) => {
+  console.log("Hello");
+  const result = item.split("bg-");
+  console.log(result[1]);
+  return result[1];
+};
+
+export const enTofn = (price) => {
+  return new Number(price).toLocaleString("fa-ir");
+};

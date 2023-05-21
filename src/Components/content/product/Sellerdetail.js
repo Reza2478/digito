@@ -1,6 +1,9 @@
 import React from "react";
 
-const Sellerdetail = ({ scale }) => {
+//Helper
+import { enTofn } from "../../helper/functions";
+
+const Sellerdetail = ({ scale,price }) => {
   return (
     <React.Fragment>
       {/* for mobile Scale */}
@@ -17,7 +20,7 @@ const Sellerdetail = ({ scale }) => {
               </span>
               <span className="mr-2">فروشنده :</span>
             </div>
-            <span className="mr-4 font-thin">دیجی تایز</span>
+            <span className="mr-4 font-thin">دیجیتو</span>
           </div>
           <div className="flex flex-auto items-center justify-center">
             <div className="flex items-center">
@@ -63,7 +66,7 @@ const Sellerdetail = ({ scale }) => {
                 </span>
                 <span className="mr-2">فروشنده :</span>
               </div>
-              <span className="mr-2 font-thin">دیجی تایز</span>
+              <span className="mr-2 font-thin">دیجیتو</span>
             </div>
             <div className="flex items-center">
               <div className="flex items-center">
@@ -92,7 +95,7 @@ const Sellerdetail = ({ scale }) => {
               <span className="mr-2 font-thin">انبار</span>
             </div>
             <div className="mt-10">
-              <div className="text mb-4 w-full text-center text-xl font-bold text-orange-500">39,850,000 تومان</div>
+              <div className="text mb-4 w-full text-center text-xl font-bold text-orange-500">{enTofn(price)} تومان</div>
               <button className="w-full rounded-md bg-orange-500 py-4 text-lg text-white">افزودن به سبد خرید</button>
             </div>
           </div>

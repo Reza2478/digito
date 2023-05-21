@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Operationbtn = ({ op }) => {
+//Context
+import { CartContext } from "../../../Context/CartContextProvider";
+
+const Operationbtn = () => {
+  const { dispatch } = useContext(CartContext);
+
   return (
-    <div className={`mt-24 flex md:mt-2 ${op==='refuse'&& 'hidden md:flex'}`}>
-      <button className={`flex w-full justify-center rounded-md ${op === "checkout" ? "bg-orange-400 " : "border border-orange-400 bg-transparent "} p-4 shadow-md md:py-2`}>{op === "checkout" ? <p className="text-xl text-white ">ادامه فرآیند خرید</p> : <p className="text-xl text-orange-400 ">انصراف از خرید</p>}</button>
+    <div className="mt-24 flex md:mt-2">
+      <button onClick={() => dispatch({ type: "CHECKOUT" })} className="flex w-full justify-center rounded-md bg-orange-400   p-4 text-xl text-white shadow-md md:py-2">
+        <p>پرداخت</p>
+      </button>
     </div>
   );
 };

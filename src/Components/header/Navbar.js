@@ -1,16 +1,18 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 //Context
 import { FilterContext } from "../../Context/FilterContextProvider";
+import { CartContext } from "../../Context/CartContextProvider";
 
 //Images
 import Shopicon from "../../assets/images/shopping-cart.png";
-import { Link } from "react-router-dom";
-import Logo from '../../assets/images/logo.png'
+import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
   const { dispatch } = useContext(FilterContext);
+  const { state } = useContext(CartContext);
 
   const inputHandler = (e) => {
     setInputValue(e.target.value);
@@ -21,29 +23,29 @@ const Navbar = () => {
       <div className="container mx-auto flex max-w-screen-2xl items-center justify-between">
         <ul className="flex items-center justify-center gap-x-2 text-slate-800 lg:gap-x-3 lg:text-lg">
           <li>
-            <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
-              <img className="w-14" src={Logo} alt='logo'/>
-            </a>
+            <Link className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
+              <img className="w-14" src={Logo} alt="logo" />
+            </Link>
           </li>
           <li>
-            <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
+            <Link className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
               خانه
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
+            <Link className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
               تلفن همراه
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
+            <Link className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
               لپ تاپ
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
+            <Link className="block rounded px-3 py-2 transition-all duration-500 hover:bg-gray-100" href="#/">
               ساعت هوشمند
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="mr-4 max-w-xl flex-1">
@@ -54,8 +56,9 @@ const Navbar = () => {
             <input value={inputValue} onChange={inputHandler} className="mr-4 w-full border-transparent bg-transparent p-2 text-slate-800 focus:border-transparent focus:outline-none focus:ring-0" type="text" name="" id="" placeholder="جستجوی نام محصول، نام برند، نام مدل و..." />
           </div>
         </div>
-        <div>
-          <Link to='/shopcart'>
+        <div className="relative">
+          <Link to="/shopcart">
+            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-2 text-white">{state.itemsCounter}</span>
             <img className="ml-4 w-10 cursor-pointer drop-shadow-md" src={Shopicon} alt="shopcart" />
           </Link>
         </div>

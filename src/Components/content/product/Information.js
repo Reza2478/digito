@@ -24,7 +24,7 @@ const Information = ({productInfo}) => {
             <Specification details={details}/>
           </div>
         </div>
-        <Sellerdetail scale="T&D" price={price}/>
+        <Sellerdetail scale="T&D" price={price} productInfo={productInfo}/>
       </div>
       <div className="flex flex-col">
         <Review />

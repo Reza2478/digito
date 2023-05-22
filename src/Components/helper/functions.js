@@ -101,3 +101,8 @@ export const colorExtraction = (item) => {
 export const enTofn = (price) => {
   return new Number(price).toLocaleString("fa-ir");
 };
+
+export const ifExist = (list, product) => {
+  if (!list.findIndex((i) => i.id === product.id)) return true;
+  else return false;
+};

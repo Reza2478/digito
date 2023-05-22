@@ -28,7 +28,7 @@ const Productdetail = () => {
         <Information productInfo={product} />
       </div>
       <Footer />
-      <Addbtn price={product.price} />
+      <Addbtn productInfo={product} />
     </div>
   );
 };

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 //Images
 import Shopicon from "../../assets/images/shopping-cart.png";
 
+//Context
+import { CartContext } from "../../Context/CartContextProvider";
+
 const Appbar = () => {
   const navigate = useNavigate();
+  const { state } = useContext(CartContext);
+
   return (
     <div>
       <div className="mt-10 mb-4 flex items-center justify-between px-4 md:hidden">
@@ -18,9 +23,10 @@ const Appbar = () => {
         <Link to="/">
           <div className="text-xl font-bold text-slate-800">دیجی تو</div>
         </Link>
-        
-        <div>
+
+        <div className="relative">
           <Link to="/shopcart">
+            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-1.5 text-white text-sm">{state.itemsCounter}</span>
             <img className="ml-4 w-8 cursor-pointer drop-shadow-md" src={Shopicon} alt="shopcart" />
           </Link>
         </div>

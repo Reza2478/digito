@@ -1,9 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Component
 import Appbar from "../Components/header/Appbar";
-import BottomNav from "../Components/content/BottomNav";
-import { Link } from "react-router-dom";
 
 //images
 import Phone from "../assets/images/categories/phone.png";
@@ -114,7 +113,6 @@ const Category = () => {
 
         <Link className=" top-1 left-3 absolute text-orange-500">مشاهده همه</Link>
       </div>
-      <BottomNav />
     </div>
   );
 };

@@ -59,19 +59,29 @@ export const searchFilter = (state, products) => {
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
+      if (searchInput !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      }
       break;
+
     case "mobile":
       newProducts = products.filter((item) => item.model.includes("موبایل"));
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
-
+      if (searchInput !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      }
       break;
+
     case "laptop":
       newProducts = products.filter((item) => item.model.includes("لپ تاپ"));
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
+      if (searchInput !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      }
       break;
 
     case "watch":
@@ -79,15 +89,15 @@ export const searchFilter = (state, products) => {
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
+      if (searchInput !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      }
       break;
 
     default:
       break;
   }
 
-  if (searchInput !== "") {
-    newProducts = products.filter((item) => item.model.includes(searchInput));
-  }
   return newProducts;
 };
 
@@ -106,5 +116,3 @@ export const ifExist = (list, product) => {
   if (!list.findIndex((i) => i.id === product.id)) return true;
   else return false;
 };
-
-

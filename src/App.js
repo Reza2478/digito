@@ -7,6 +7,7 @@ import Category from "./Pages/Category";
 import Productdetail from "./Pages/Productdetail";
 import Shopcart from "./Pages/Shopcart";
 import BottomNav from "./Components/content/BottomNav";
+import Footer from "./Components/content/Footer";
 
 //Context
 import ProductContextProvider from "./Context/ProductContextProvider";
@@ -27,6 +28,8 @@ function App() {
             <Route path="/shopcart" element={<Shopcart />} />
           </Routes>
           <BottomNav active={active} />
+      <Footer />
+
         </CartContextProvider>
       </FilterContextProvider>
     </ProductContextProvider>

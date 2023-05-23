@@ -5,7 +5,7 @@ import Location from "../../assets/images/location.png";
 
 const Footer = () => {
   return (
-    <div className="container mx-auto hidden max-w-screen-2xl flex-col bg-white p-8 md:flex md:flex-row">
+    <div className="container mx-auto hidden max-w-screen-2xl flex-col bg-white p-2 md:flex md:flex-row">
       <div className=" p-8 text-slate-800">
         <div className="mb-8 flex flex-col items-start justify-start gap-y-4">
           <p className=" text-2xl font-bold text-orange-500 drop-shadow-lg">دیجیتو</p>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center p-8 md:items-end">
-        <img className="mb-8 max-w-xs rounded-lg" src={Location} alt="" />
+        <img className="mb-8 max-w-[300px] rounded-lg" src={Location} alt="location" />
         <div className="flex flex-col gap-y-2 text-orange-500">
           <div className="flex items-center justify-center text-lg md:justify-end">
             <span className="ml-2 drop-shadow-md">021-123456</span>

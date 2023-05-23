@@ -27,7 +27,6 @@ const Productdetail = () => {
         <Breadcrumbs />
         <Information productInfo={product} />
       </div>
-      <Footer />
       <Addbtn productInfo={product} />
     </div>
   );

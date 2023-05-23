@@ -10,7 +10,6 @@ import Navbar from "../Components/header/Navbar";
 import Cart from "../Components/content/shopcart/Cart";
 import Totalprice from "../Components/content/shopcart/Totalprice";
 import Operationbtn from "../Components/content/shopcart/Operationbtn";
-import Footer from "../Components/content/Footer";
 
 //Images
 import Shopping from "../assets/images/shopping.png";
@@ -57,7 +56,6 @@ const Shopcart = () => {
           </div>
         </div>
       )}
-      <Footer />
     </div>
   );
 };

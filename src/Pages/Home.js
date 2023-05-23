@@ -4,7 +4,6 @@ import React from "react";
 import Header from "../Components/header/Header";
 import Content from "../Components/content/Content";
 import Filtersection from "../Components/Filtersection";
-import Footer from "../Components/content/Footer";
 
 const Home = ({ active, setActive }) => {
   return (
@@ -13,7 +12,6 @@ const Home = ({ active, setActive }) => {
       <Header setActive={setActive} />
       <Content />
       <Filtersection active={active} setActive={setActive} />
-      <Footer />
     </React.Fragment>
   );
 };

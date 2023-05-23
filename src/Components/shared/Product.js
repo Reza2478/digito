@@ -1,22 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Helper
 import { textSplitter } from "../helper/functions";
 import { toInteger } from "../helper/functions";
-import { Link } from "react-router-dom";
 
 const Product = ({ productData }) => {
-  const { id, brand, colors, details, images, price, model } = productData;
+  const { id, brand, colors, images, price, model } = productData;
   return (
     <div className="flex flex-col rounded-xl bg-white shadow-md">
       {/*image section*/}
       <div className="relative m-1 rounded-lg bg-slate-200">
         <img className="w-full px-9 py-3" src={images[0]} alt={id} />
-        <div className="absolute top-3 right-2 rounded-full bg-gray-300 p-1">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 fill-orange-400" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-          </svg>
-        </div>
+        
       </div>
       {/*color information*/}
 

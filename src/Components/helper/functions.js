@@ -106,3 +106,5 @@ export const ifExist = (list, product) => {
   if (!list.findIndex((i) => i.id === product.id)) return true;
   else return false;
 };
+
+

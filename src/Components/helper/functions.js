@@ -52,6 +52,7 @@ const setFilters = (items, label, newProducts) => {
   return newProducts;
 };
 export const searchFilter = (state, products) => {
+  
   const { searchInput, category, colors, brands, priceRange } = state;
   let newProducts = products;
   switch (category) {

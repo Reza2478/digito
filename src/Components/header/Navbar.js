@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 //Context
@@ -10,20 +10,12 @@ import Shopicon from "../../assets/images/shopping-cart.png";
 import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
-  const [inputValue, setInputValue] = useState("");
   const { dispatch } = useContext(FilterContext);
   const { state } = useContext(CartContext);
 
   const inputHandler = async (e) => {
-    await setInputValue(await e.target.value);
+    await dispatch({ type: "SEARCH_INPUT", payload: e.target.value });
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      await dispatch({ type: "SEARCH_INPUT", payload: inputValue });
-    };
-    fetchData();
-  }, [inputValue]);
 
   return (
     <nav className="mb-9 hidden bg-white p-4 shadow-lg md:block">
@@ -51,7 +43,7 @@ const Navbar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="m-2 h-7 w-7 cursor-pointer stroke-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <input value={inputValue} onChange={inputHandler} className="mr-4 w-full border-transparent bg-transparent p-2 text-slate-800 focus:border-transparent focus:outline-none focus:ring-0" type="text" name="" id="" placeholder="جستجوی نام محصول، نام برند، نام مدل و..." />
+            <input onChange={inputHandler} className="mr-4 w-full border-transparent bg-transparent p-2 text-slate-800 focus:border-transparent focus:outline-none focus:ring-0" type="text" name="" id="" placeholder="جستجوی نام محصول، نام برند، نام مدل و..." />
           </div>
         </div>
         <div className="relative mr-4">

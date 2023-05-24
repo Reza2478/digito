@@ -46,7 +46,7 @@ const Shopcart = () => {
           </div>
         </div>
       ) : (
-        <div className="container mx-auto mb-9 grid h-[100vh] max-w-screen-2xl grid-cols-12 gap-4 md:px-4 ">
+        <div className="container mx-auto mb-9 grid mt-20 md:mt-0  max-w-screen-2xl grid-cols-12 gap-4 md:px-4 ">
           <div className="col-span-12 flex flex-col items-center justify-center ">
             <div className="flex w-full flex-col items-center justify-between md:w-2/3 md:flex-row">
               <p className="mb-16 text-2xl font-bold text-slate-700 md:text-3xl">با تشکر از خرید شما</p>

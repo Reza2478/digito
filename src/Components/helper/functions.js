@@ -114,6 +114,7 @@ export const enTofn = (price) => {
 };
 
 export const ifExist = (list, product) => {
-  if (!list.findIndex((i) => i.id === product.id)) return true;
-  else return false;
+  const temp=list.findIndex((i) => i.id === product.id)
+  if (temp===-1) return false;
+  else return true;
 };

@@ -4,40 +4,32 @@ const initialState = {
   searchInput: "",
   category: "all",
   brands: [],
-  priceRange: {},
+  priceRange: {min:0,max:100},
   colors: [],
 };
 
 export const FilterContext = createContext();
 
 const reducer = (state, action) => {
-  console.log(state);
+  // console.log(state);
   switch (action.type) {
     case "SEARCH_INPUT":
       return { ...state, searchInput: action.payload };
+
     case "CATEGORY":
       return { ...state, category: action.payload };
+
     case "COLOR":
-      let color = "";
-      if (action.payload.name === "سفید") color = "bg-stone-100";
-      if (action.payload.name === "نقره ای") color = "bg-zinc-200";
-      if (action.payload.name === "خاکستری") color = "bg-gray-400";
-      if (action.payload.name === "قرمز") color = "bg-red-400";
-      if (action.payload.name === "سبز") color = "bg-green-400";
-      action.payload.check ? state.colors.push(color) : (state.colors = state.colors.filter((item) => item !== color));
+      action.payload.check ? state.colors.push(action.payload.name) : (state.colors = state.colors.filter((item) => item !== action.payload.name));
       return { ...state };
+
     case "BRAND":
-      let brand = "";
-      if (action.payload.name === "اپل") brand = "apple";
-      if (action.payload.name === "سامسونگ") brand = "samsung";
-      if (action.payload.name === "شیائومی") brand = "xiaomi";
-      if (action.payload.name === "هواوی") brand = "huawei";
-      action.payload.check ? state.brands.push(brand) : (state.brands = state.brands.filter((item) => item !== brand));
+      action.payload.check ? state.brands.push(action.payload.name) : (state.brands = state.brands.filter((item) => item !== action.payload.name));
       return { ...state };
+
     case "PRICE":
-      const min = action.payload.min * 1000000;
-      const max = action.payload.max * 1000000;
-      return { ...state, priceRange: { min, max } };
+      
+      return { ...state, priceRange: { min:action.payload.min, max:action.payload.max } };
 
     default:
       return state;
@@ -45,8 +37,8 @@ const reducer = (state, action) => {
 };
 
 const getInitialState = () => {
- const filter = localStorage.getItem("filters");
- return filter ? JSON.parse(filter):initialState
+  const filter = sessionStorage.getItem("filters");
+  return filter ? JSON.parse(filter) : initialState;
 };
 
 const FilterContextProvider = ({ children }) => {
@@ -54,7 +46,7 @@ const FilterContextProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem("filters", JSON.stringify(state));
+      sessionStorage.setItem("filters", JSON.stringify(state));
     } catch (error) {
       return error;
     }

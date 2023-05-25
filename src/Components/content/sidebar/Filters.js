@@ -3,11 +3,14 @@ import React, { useContext, useState, useEffect } from "react";
 //Context
 import { FilterContext } from "../../../Context/FilterContextProvider";
 
+//Helper
+import { enTofn } from "../../helper/functions";
+
 const Filters = ({ items, title }) => {
   const [selected, setSelected] = useState(false);
-  const [price, setPrice] = useState({ min: 0, max: 100 });
-  const { dispatch } = useContext(FilterContext);
-
+  const { dispatch, state } = useContext(FilterContext);
+  const [price, setPrice] = useState(state.priceRange);
+  
   const selectHandler = () => {
     setSelected(!selected);
   };
@@ -16,19 +19,22 @@ const Filters = ({ items, title }) => {
     if (title === "برند محصول") setSelected(true);
   }, []);
 
-  const changeHandler = (event, status) => {
-    console.log();
-    if (status === "min") setPrice({ min: event.target.value, max: price.max });
-    else setPrice({ min: price.min, max: event.target.value });
+  const changeHandler =async (event, status) => {
+    if (status === "min") await setPrice({ min: event.target.value, max: price.max });
+    else await setPrice({ min: price.min, max: event.target.value });
     dispatch({ type: "PRICE", payload: price });
   };
 
   const checkHandler = (event, item) => {
     if (event.target.checked) title === "برند محصول" ? dispatch({ type: "BRAND", payload: { name: item, check: true } }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: { name: item, check: true } });
     else {
-      console.log("not checkd");
       title === "برند محصول" ? dispatch({ type: "BRAND", payload: { name: item, check: false } }) : title === "رنگ محصول" && dispatch({ type: "COLOR", payload: { name: item, check: false } });
     }
+  };
+
+  const ifChecked = (list, item) => {
+    if(list.find((i) => i === item)) return "checked";
+    else return ''
   };
 
   return (
@@ -43,19 +49,19 @@ const Filters = ({ items, title }) => {
                 {title === "محدوده قیمت" && <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />}
               </svg>
             </div>
-            <span className="mr-3 text-md font-semibold md:text-lg text-slate-800">{title}</span>
+            <span className="text-md mr-3 font-semibold text-slate-800 md:text-lg">{title}</span>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" className={`h-4 w-4 stroke-slate-700 transition-all duration-500 ${selected === false && "rotate-180"}`} viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
         </div>
 
-        <div className="px-2 mb-2">
+        <div className="mb-2 px-2">
           <ul>
             {title !== "محدوده قیمت" &&
               items.map((item) => (
-                <li key={item} className={`md:mb-3 mb-2 ${selected ? "block" : "hidden"}`}>
-                  <input onClick={(event) => checkHandler(event, item)} type="checkbox" className=" rounded text-orange-500 focus:ring-orange-500" name={title} id={item} />
+                <li key={item} className={`mb-2 md:mb-3 ${selected ? "block" : "hidden"}`}>
+                  <input checked={ifChecked(state.brands, item) || ifChecked(state.colors, item)} onChange={(event) => checkHandler(event, item)} type="checkbox" className='rounded text-orange-500 focus:ring-orange-500' name={title} id={item} />
                   <label className="mr-2 text-slate-800" htmlFor={item}>
                     {item}
                   </label>
@@ -65,18 +71,18 @@ const Filters = ({ items, title }) => {
             {title === "محدوده قیمت" && (
               <div className={`${selected ? "block" : "hidden"}`}>
                 <div className="flex items-center justify-between">
-                  <span className="mx-1">0</span>
+                  <span className="mx-1">{enTofn(0)}</span>
                   <div className="flex w-full">
-                    <input onChange={(event) => changeHandler(event, "min")} id="minmax-range" type="range" min="0" max="50" value={price.min} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
-                    <input onChange={(event) => changeHandler(event, "max")} id="minmax-range" type="range" min="50" max="100" value={price.max} className=" w-full h-1 bg-orange-500 rounded-lg appearance-none cursor-pointer dark:bg-slate-800" />
+                    <input onChange={(event) => changeHandler(event, "min")} id="minmax-range" type="range" min="0" max="50" value={price.min} className=" h-1 w-full cursor-pointer appearance-none rounded-lg bg-orange-500 dark:bg-slate-800" />
+                    <input onChange={(event) => changeHandler(event, "max")} id="minmax-range" type="range" min="50" max="100" value={price.max} className=" h-1 w-full cursor-pointer appearance-none rounded-lg bg-orange-500 dark:bg-slate-800" />
                   </div>
-                  <span className="mx-1">100</span>
+                  <span className="mx-1">{enTofn(100)}</span>
                 </div>
-                <div className="flex justify-center flex-col items-center p-3">
+                <div className="flex flex-col items-center justify-center p-3">
                   <p className="text-lg font-bold">
-                    از {price.min} تا {price.max}{" "}
+                    از {enTofn(price.min)} تا {enTofn(price.max)}
                   </p>
-                  <p className="text-sm md:text-md font-bold ">میلیون تومان</p>
+                  <p className="md:text-md text-sm font-bold ">میلیون تومان</p>
                 </div>
               </div>
             )}

@@ -46,13 +46,11 @@ const setFilters = (items, label, newProducts) => {
       newProducts = temp;
     }
   } else {
-    if (!items.min) return newProducts;
-    else newProducts = newProducts.filter((product) => product.price >= items.min && product.price <= items.max);
+    newProducts = newProducts.filter((product) => product.price >= items.min * 1000000 && product.price <= items.max * 1000000);
   }
   return newProducts;
 };
 export const searchFilter = (state, products) => {
-  
   const { searchInput, category, colors, brands, priceRange } = state;
   let newProducts = products;
   switch (category) {
@@ -114,7 +112,8 @@ export const enTofn = (price) => {
 };
 
 export const ifExist = (list, product) => {
-  const temp=list.findIndex((i) => i.id === product.id)
-  if (temp===-1) return false;
+  console.log({ list }, { product });
+  const temp = list.findIndex((i) => i.id === product.id);
+  if (temp === -1) return false;
   else return true;
 };

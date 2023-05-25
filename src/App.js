@@ -28,8 +28,7 @@ function App() {
             <Route path="/shopcart" element={<Shopcart />} />
           </Routes>
           <BottomNav active={active} />
-      <Footer />
-
+          <Footer />
         </CartContextProvider>
       </FilterContextProvider>
     </ProductContextProvider>

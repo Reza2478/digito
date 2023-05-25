@@ -2,9 +2,9 @@ export const products = [
   {
     id: 1,
     model: "گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
-    brand: "apple",
+    brand: "اپل",
     price: "48650000",
-    colors: ["bg-gray-400", "bg-stone-100", "bg-green-400", "bg-red-400"],
+    colors: ["خاکستری", "سفید", "سبز", "قرمز"],
     details: [{ OS: "ios 15" }, { size: "6.1" }, { screen: "Super Retina XDR OlED" }, { camera: "12 مگاپیکسل" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/67091a6aa8e62c49eb949d735a8e58a03c71299d_1650873654.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -15,9 +15,9 @@ export const products = [
   {
     id: 2,
     model: "گوشی موبایل سامسونگ مدل Galaxy S21 FE 5G دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
-    brand: "samsung",
+    brand: "سامسونگ",
     price: "21500000",
-    colors: ["bg-gray-400", "bg-stone-100", "bg-red-400"],
+    colors: ["خاکستری", "سفید", "قرمز"],
     details: [{ OS: "Android 12" }, { size: "6.4" }, { screen: "Dynamic AMOLED 2X" }, { camera: "12 مگاپیکسل" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/4af1bad23ab1945fa5cef6a333792196e0fe850e_1656426417.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -28,9 +28,9 @@ export const products = [
   {
     id: 3,
     model: "گوشی موبایل سامسونگ مدل Galaxy A73 5G SM-A736B/DS دو سیم کارت ظرفیت 128 گیگابایت و رم 8 گیگابایت",
-    brand: "samsung",
+    brand: "سامسونگ",
     price: "18899000",
-    colors: ["bg-gray-400", "bg-zinc-200"],
+    colors: ["خاکستری", "نقره ای"],
     details: [{ OS: "Android 12" }, { size: "6.7" }, { screen: "Super AMOLED Plus" }, { camera: "108 مگاپیکسل" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/9fd4d980776d3e609ff538fc6b6bfbdd575ee620_1654086460.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -42,9 +42,9 @@ export const products = [
   {
     id: 4,
     model: "لپ تاپ 15.6 اینچی ایسوس مدل TUF FX506HC-F15-153050",
-    brand: "asus",
+    brand: "ایسوس",
     price: "44990000",
-    colors: ["bg-gray-400", "bg-stone-100"],
+    colors: ["خاکستری", "سفید"],
     details: [{ series: "Core i5" }, { ram: "8 گیگابایت" }, { hard: "512 گیگابایت" }, { screen: "Full Hd - 1920 * 1080 پیکسل" }, { graphic: "NVIDIA" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/db2061f8d4863a673c325aa1559261db3efb82b6_1670159482.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -55,9 +55,9 @@ export const products = [
   {
     id: 5,
     model: "لپ تاپ 15.6 اینچی ایسوس مدل X543MA-GQ1012",
-    brand: "asus",
+    brand: "ایسوس",
     price: "13250000",
-    colors: ["bg-gray-400"],
+    colors: ["خاکستری"],
     details: [{ series: "Celeron" }, { ram: "4 گیگابایت" }, { hard: "یک ترابایت" }, { screen: "HD|1366x768" }, { graphic: "Intel" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/bae4a15494947baf5540c64afee44073415e2b26_1641303564.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -68,9 +68,9 @@ export const products = [
   {
     id: 6,
     model: "لپ تاپ 15.6 اینچی اچ‌پی مدل Victus 15-FA0031DX",
-    brand: "hp",
+    brand: "اچ پی",
     price: "42000000",
-    colors: ["bg-gray-400", "bg-red-400"],
+    colors: ["خاکستری", "قرمز"],
     details: [{ series: "Core i5" }, { ram: "8 گیگابایت" }, { hard: "512 گیگابایت" }, { screen: "Full Hd - 1920 * 1080 پیکسل" }, { graphic: "NVIDIA" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/50c904d782011abc8cb712abac1d51df2b7a2297_1671299236.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -81,9 +81,9 @@ export const products = [
   {
     id: 7,
     model: "لپ تاپ 12.4 اینچی مایکروسافت مدل Surface Laptop Go - B",
-    brand: "microsoft",
+    brand: "مایکروسافت",
     price: "34900000",
-    colors: ["bg-zinc-200", "bg-stone-100", "bg-gray-400"],
+    colors: ["نقره ای", "سفید", "خاکستری"],
     details: [{ series: "Core i5" }, { ram: "8 گیگابایت" }, { hard: "256 گیگابایت" }, { screen: "1024×1536 پیکسل" }, { graphic: "Intel" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/806e0d0e5f5d02d9cbf1b4a24eedd3a99a265dd3_1622448152.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -94,9 +94,9 @@ export const products = [
   {
     id: 8,
     model: "لپ تاپ 16.2 اینچی اپل مدل MacBook Pro Mk183 2021",
-    brand: "apple",
+    brand: "اپل",
     price: "109000000",
-    colors: ["bg-gray-400", "bg-slate-400", "bg-stone-100"],
+    colors: ["خاکستری", "قرمز", "سفید"],
     details: [{ series: "M1" }, { ram: "16 گیگابایت" }, { hard: "512 گیگابایت" }, { screen: "3456x2234" }, { graphic: "َApple" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/e305a33af11daa70ec8e82fbadc5d21a0157fe15_1653469933.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -108,9 +108,9 @@ export const products = [
   {
     id: 9,
     model: "ساعت هوشمند سامسونگ مدل Galaxy Watch5 44mm",
-    brand: "samsung",
+    brand: "سامسونگ",
     price: "7990000",
-    colors: ["bg-gray-400", "bg-red-400", "bg-green-400"],
+    colors: ["خاکستری", "قرمز", "سبز"],
     details: [{ usage: "رسمی، روزمره، ورزشی" }, { screen: "دایره" }, { strap_material: "سیلیکون" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/760c0407a514c473eb40542cc8b3d5ee988f1ca2_1661263829.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -121,9 +121,9 @@ export const products = [
   {
     id: 10,
     model: "ساعت هوشمند شیائومی مدل Redmi Watch 2 Lite بند سلیکونی",
-    brand: "xiaomi",
+    brand: "شیائومی",
     price: "2594000",
-    colors: ["bg-gray-400", "bg-red-400", "bg-stone-100"],
+    colors: ["خاکستری", "قرمز", "سفید"],
     details: [{ usage: "روزمره، ورزشی" }, { screen: "مستطیل" }, { strap_material: "سیلیکون" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/8c7d843d1d143250d7eb02fff08e10c149ac1dd6_1656931467.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -134,9 +134,9 @@ export const products = [
   {
     id: 11,
     model: "ساعت هوشمند اپل واچ مدل Ultra 49 mm Alpine Loop",
-    brand: "apple",
+    brand: "اپل",
     price: "40000000",
-    colors: ["bg-stone-100", "bg-green-400", "bg-red-400"],
+    colors: ["سفید", "سبز", "قرمز"],
     details: [{ usage: "رسمی، روزمره، ورزشی" }, { screen: "مستطیل" }, { strap_material: "برزنت" }],
     images: [
       "https://dkstatics-public.digikala.com/digikala-products/b0af2ec78668c85506c1edc260b42ff447f019c8_1667201885.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",

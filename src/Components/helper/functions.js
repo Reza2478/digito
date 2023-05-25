@@ -117,3 +117,13 @@ export const ifExist = (list, product) => {
   if (temp === -1) return false;
   else return true;
 };
+
+export const colorConverter = (item) => {
+  let color = "";
+  if (item === "سفید") color = "bg-stone-100";
+  else if (item === "نقره ای") color = "bg-zinc-200";
+  else if (item === "خاکستری") color = "bg-gray-400";
+  else if (item === "قرمز") color = "bg-red-400";
+  else if (item === "سبز") color = "bg-green-400";
+  return color;
+};

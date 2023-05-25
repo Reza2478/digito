@@ -4,7 +4,7 @@ const initialState = {
   searchInput: "",
   category: "all",
   brands: [],
-  priceRange: {min:0,max:100},
+  priceRange: { min: 0, max: 100 },
   colors: [],
 };
 
@@ -28,8 +28,7 @@ const reducer = (state, action) => {
       return { ...state };
 
     case "PRICE":
-      
-      return { ...state, priceRange: { min:action.payload.min, max:action.payload.max } };
+      return { ...state, priceRange: { min: action.payload.min, max: action.payload.max } };
 
     default:
       return state;

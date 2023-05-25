@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //Helper
-import { textSplitter } from "../helper/functions";
-import { toInteger } from "../helper/functions";
+import { textSplitter,toInteger,colorConverter } from "../helper/functions";
+
 
 const Product = ({ productData }) => {
   const { id, brand, colors, images, price, model } = productData;
@@ -20,7 +20,7 @@ const Product = ({ productData }) => {
         <span className="text-xs text-slate-200 sm:text-base">{brand}</span>
         <div className="flex items-center justify-center">
           {colors.map((item, id) => (
-            <span key={id} className={`ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full ${item} border border-white  sm:h-7 sm:w-7`}></span>
+            <span key={id} className={`ml-[-4px] flex h-5 w-5 cursor-pointer items-center justify-center rounded-full ${colorConverter(item)} border border-white  sm:h-7 sm:w-7`}></span>
           ))}
         </div>
       </div>

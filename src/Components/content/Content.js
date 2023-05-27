@@ -20,7 +20,7 @@ const Content = () => {
   // console.log(filteredProducts);
 
   return (
-    <div className="container mx-auto mb-9 grid max-w-screen-2xl grid-cols-12 gap-4  md:px-4 lg:px-6">
+    <div className="container mx-auto mb-9 grid max-w-screen-2xl grid-cols-12 gap-4 md:px-4 lg:px-6">
       <Sidebar />
       <Products products={filteredProducts} />
     </div>

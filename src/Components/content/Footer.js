@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Images
 import Location from "../../assets/images/location.png";
@@ -14,21 +15,21 @@ const Footer = () => {
 
         <div className="flex items-start justify-between">
           <p className="text-justify text-xl leading-10">
-            دیجیتو  عرضه کننده جدیدترین محصولات الکترونیک نظیر لپ تاپ، گوشی هوشمند و ساعت هوشمند می‌باشد.دیجی تایز افتخار این را داشته که به
+            دیجیتو عرضه کننده جدیدترین محصولات الکترونیک نظیر لپ تاپ، گوشی هوشمند و ساعت هوشمند می‌باشد.دیجی تایز افتخار این را داشته که به
             <b className="text-orange-500"> 223,333 نفر</b> تا به اکنون خدمت رسانی داشته باشد.
           </p>
           <ul className="mr-10 flex w-full flex-col gap-y-4">
-            <h1 className="text-xl font-bold">محصولات</h1>
+            <h1 className="text-xl font-bold">دسترسی سریع</h1>
             <li className="">
-              <a className="block" href="#">
-                تلفن همراه
-              </a>
+              <Link className="block" to="/">
+                خانه
+              </Link>
             </li>
             <li className="w-full">
-              <a href="#">لپ تاپ</a>
+              <Link to="/">درباره ما</Link>
             </li>
             <li className="w-full">
-              <a href="#">ساعت هوشمند</a>
+              <Link to="/">تماس با ما</Link>
             </li>
           </ul>
         </div>

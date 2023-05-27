@@ -33,14 +33,14 @@ const BottomNav = ({ active }) => {
               {pathname === "/shopcart" && <span className="mr-2 text-lg font-bold">سبد خرید</span>}
             </Link>
           </li>
-          <li className={`${pathname === "/interest" ? "text-slate-800" : "text-gray-400"} flex-auto text-sm`}>
+          {/* <li className={`${pathname === "/interest" ? "text-slate-800" : "text-gray-400"} flex-auto text-sm`}>
             <Link className="flex w-full items-center justify-center py-4" to="/interest">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
               </svg>
               {pathname === "/interest" && <span className="mr-2 text-lg font-bold">علاقه مندی ها</span>}
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

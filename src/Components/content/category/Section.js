@@ -7,13 +7,14 @@ import Links from "./Links";
 //Context
 import { FilterContext } from "../../../Context/FilterContextProvider";
 
-//Images
-//
-//
-//
+
+const clickHandler = (state,dispatch,cluster)=>{
+   state.brands=[]
+  dispatch({ type: "CATEGORY", payload: cluster })
+}
 
 const Section = ({ Image, CatName, Categories, Cluster }) => {
-  const { dispatch } = useContext(FilterContext);
+  const { state,dispatch } = useContext(FilterContext);
 
   return (
     <div className="relative my-8  flex items-end text-slate-700 ">
@@ -29,7 +30,7 @@ const Section = ({ Image, CatName, Categories, Cluster }) => {
         </div>
       </div>
 
-      <Link to="/" onClick={() => dispatch({ type: "CATEGORY", payload: Cluster })} className=" absolute top-1 left-3 text-orange-500">
+      <Link to="/" onClick={() => clickHandler(state,dispatch, Cluster)} className=" absolute top-1 left-3 text-orange-500">
         مشاهده همه
       </Link>
     </div>

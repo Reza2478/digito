@@ -4,7 +4,6 @@ import React from "react";
 import Categories from "./Categories";
 import Filters from "./Filters";
 
-
 const Sidebar = () => {
   return (
     <div className="col-span-4 row-span-2 hidden md:block lg:col-span-3 xl:col-span-2">
@@ -12,7 +11,7 @@ const Sidebar = () => {
         <Categories />
         <div className="mb-5">
           <div className="mb-5 text-xl font-bold text-orange-400">فیلتر</div>
-          <Filters title="برند محصول" items={["اپل", "سامسونگ", "شیائومی", "هواوی"]} />
+          <Filters title="برند محصول" items={["اپل", "سامسونگ", "شیائومی", "اچ پی", "ایسوس", "مایکروسافت"]} />
           <Filters title="رنگ محصول" items={["نقره ای", "سفید", "قرمز", "خاکستری", "سبز"]} />
           <Filters title="محدوده قیمت" />
         </div>

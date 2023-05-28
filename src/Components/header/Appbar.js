@@ -21,7 +21,7 @@ const Appbar = () => {
         </div>
 
         <Link to="/">
-          <div className="text-xl font-bold text-slate-800">دیجی تو</div>
+          <div className="text-xl font-bold text-slate-800">دیجیتو</div>
         </Link>
 
         <div className="relative">

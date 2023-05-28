@@ -4,7 +4,6 @@ import React, { useContext } from "react";
 import { productsContext } from "../../Context/ProductContextProvider";
 import { FilterContext } from "../../Context/FilterContextProvider";
 
-
 //Components
 import Sidebar from "./sidebar/Sidebar";
 import Products from "./Products";
@@ -12,11 +11,10 @@ import Products from "./Products";
 //Helper
 import { searchFilter } from "../helper/functions";
 
-
 const Content = () => {
   const products = useContext(productsContext);
-  const {state}=useContext(FilterContext)
-  const filteredProducts=searchFilter(state,products)
+  const { state } = useContext(FilterContext);
+  const filteredProducts = searchFilter(state, products);
   // console.log(filteredProducts);
 
   return (

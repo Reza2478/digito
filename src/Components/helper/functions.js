@@ -50,16 +50,17 @@ const setFilters = (items, label, newProducts) => {
   }
   return newProducts;
 };
+
 export const searchFilter = (state, products) => {
-  const { searchInput, category, colors, brands, priceRange } = state;
+  const { input, category, colors, brands, priceRange } = state;
   let newProducts = products;
   switch (category) {
     case "all":
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
-      if (searchInput !== "") {
-        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      if (input !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(input));
       }
       break;
 
@@ -68,8 +69,8 @@ export const searchFilter = (state, products) => {
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
-      if (searchInput !== "") {
-        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      if (input !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(input));
       }
       break;
 
@@ -78,8 +79,8 @@ export const searchFilter = (state, products) => {
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
-      if (searchInput !== "") {
-        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      if (input !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(input));
       }
       break;
 
@@ -88,8 +89,8 @@ export const searchFilter = (state, products) => {
       newProducts = setFilters(brands, "brands", newProducts);
       newProducts = setFilters(colors, "colors", newProducts);
       newProducts = setFilters(priceRange, "price", newProducts);
-      if (searchInput !== "") {
-        newProducts = newProducts.filter((item) => item.model.includes(searchInput));
+      if (input !== "") {
+        newProducts = newProducts.filter((item) => item.model.includes(input));
       }
       break;
 
@@ -112,7 +113,6 @@ export const enTofn = (price) => {
 };
 
 export const ifExist = (list, product) => {
-  console.log({ list }, { product });
   const temp = list.findIndex((i) => i.id === product.id);
   if (temp === -1) return false;
   else return true;

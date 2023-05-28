@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import {useDispatch,useSelector} from 'react-redux'
 
-//Context
-import { FilterContext } from "../../Context/FilterContextProvider";
-import { CartContext } from "../../Context/CartContextProvider";
+//Redux
+import { searchInput } from "../../features/filtersSlice"; 
 
 //Images
 import Shopicon from "../../assets/images/shopping-cart.png";
 import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
-  const { dispatch } = useContext(FilterContext);
-  const { state } = useContext(CartContext);
+  const dispatch  = useDispatch()
+  // const { state } = useContext(CartContext);
 
   const inputHandler = async (e) => {
-    await dispatch({ type: "SEARCH_INPUT", payload: e.target.value });
+    await dispatch(searchInput(e.target.value));
   };
 
   return (
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div className="relative mr-4">
           <Link to="/shopcart">
-            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-2 text-white">{state.itemsCounter}</span>
+            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-2 text-white">0</span>
             <img className="ml-4 w-10 cursor-pointer drop-shadow-md" src={Shopicon} alt="shopcart" />
           </Link>
         </div>

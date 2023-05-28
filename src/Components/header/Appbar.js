@@ -9,7 +9,7 @@ import { CartContext } from "../../Context/CartContextProvider";
 
 const Appbar = () => {
   const navigate = useNavigate();
-  const { state } = useContext(CartContext);
+  // const { state } = useContext(CartContext);
 
   return (
     <div>
@@ -26,7 +26,7 @@ const Appbar = () => {
 
         <div className="relative">
           <Link to="/shopcart">
-            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-1.5 text-white text-sm">{state.itemsCounter}</span>
+            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-1.5 text-white text-sm">0</span>
             <img className="ml-4 w-8 cursor-pointer drop-shadow-md" src={Shopicon} alt="shopcart" />
           </Link>
         </div>

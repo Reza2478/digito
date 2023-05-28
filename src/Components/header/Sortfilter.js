@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
-
-//Context
-import { FilterContext } from "../../Context/FilterContextProvider";
+import React from "react";
+import { useDispatch } from "react-redux"; 
+ 
+//Redux
+import { searchInput } from "../../features/filtersSlice";
 
 const Sortfilter = ({ setActive }) => {
-  const { dispatch } = useContext(FilterContext);
+  const  dispatch = useDispatch()
 
-  const inputHandler = async (e) => {
-    await dispatch({ type: "SEARCH_INPUT", payload: e.target.value });
+  const inputHandler =  (e) => {
+     dispatch(searchInput(e.target.value));
   };
 
   return (

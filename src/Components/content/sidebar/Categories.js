@@ -1,16 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
 
-//Context
-import { FilterContext } from "../../../Context/FilterContextProvider";
+//Redux
+import { categories } from "../../../features/filtersSlice";
 
 const Categories = () => {
-  const { dispatch, state } = useContext(FilterContext);
+  const dispatch = useDispatch();
+  const state= useSelector((state)=>state.filters)
   const [selected, setSelected] = useState(state.category);
 
   const selectHandler = (value) => {
     setSelected(value);
-    dispatch({ type: "CATEGORY", payload: value });
+    dispatch(categories(value));
   };
+
   return (
     <div className="mb-7">
       <div className="mb-5 text-xl font-bold text-orange-400">دسته بندی</div>

@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
+import  {useDispatch,useSelector} from 'react-redux'
 
 //Helper
 import { enTofn, ifExist } from "../../helper/functions";
 
-//Context
-import { CartContext } from "../../../Context/CartContextProvider";
+//Redux
+import { addItems } from "../../../features/cartSlice";
+
 
 const Sellerdetail = ({ scale, price, productInfo }) => {
-  const { dispatch, state } = useContext(CartContext);
+  const dispatch = useDispatch()
+  const state= useSelector(state=>state.cart);
+
   return (
     <React.Fragment>
       {/* for mobile Scale */}
@@ -105,7 +109,7 @@ const Sellerdetail = ({ scale, price, productInfo }) => {
               ) : (
                 <button
                   onClick={() => {
-                    dispatch({ type: "ADD_ITEM", payload: productInfo });
+                    dispatch(addItems(productInfo));
                   }}
                   className="w-full rounded-md bg-orange-500 py-4 text-lg text-white"
                 >

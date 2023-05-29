@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
   selectedItems: [],
   total: 0,
@@ -25,12 +26,12 @@ const cartSlice = createSlice({
   initialState: getInitialState(),
   reducers: {
     addItems: (state, action) => {
-      if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
+     
         state.selectedItems.push({
           ...action.payload,
           quantity: 1,
         });
-      }
+      
       state.total=sumItems(state.selectedItems).total;
       state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
       state.checkout = false;
@@ -38,7 +39,7 @@ const cartSlice = createSlice({
     },
 
     increase: (state, action) => {
-      const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
+      const index = state.selectedItems.findIndex((item) => (item.id === action.payload.id && item.color === action.payload.color));
       state.selectedItems[index].quantity++;
       state.total=sumItems(state.selectedItems).total;
       state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
@@ -47,7 +48,7 @@ const cartSlice = createSlice({
     },
 
     decrease: (state, action) => {
-      const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
+      const index = state.selectedItems.findIndex((item) => (item.id === action.payload.id && item.color === action.payload.color));
       state.selectedItems[index].quantity--;
       state.total=sumItems(state.selectedItems).total;
       state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
@@ -56,7 +57,8 @@ const cartSlice = createSlice({
     },
 
     remove: (state, action) => {
-      const newSelectedItem = state.selectedItems.filter((item) => item.id !== action.payload.id);
+      const product = state.selectedItems.find((item) => (item.id === action.payload.id && item.color === action.payload.color));
+      const newSelectedItem = state.selectedItems.filter((item) => (item !== product ));
       state.selectedItems = newSelectedItem;
       state.total=sumItems(state.selectedItems).total;
       state.itemsCounter=sumItems(state.selectedItems).itemsCounter;

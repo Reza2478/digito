@@ -113,9 +113,14 @@ export const enTofn = (price) => {
 };
 
 export const ifExist = (list, product) => {
-  const temp = list.findIndex((i) => i.id === product.id);
-  if (temp === -1) return false;
-  else return true;
+  console.log({ product });
+  const index = list.findIndex((i) => i.id === product.id);
+  const color = list.findIndex((i) => i.color === product.color);
+
+  if (index !== -1) {
+    if (color === -1) return false;
+    else return true;
+  } else return false;
 };
 
 export const colorConverter = (item) => {

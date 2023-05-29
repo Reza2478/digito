@@ -1,5 +1,5 @@
 import React from "react";
-import  {useDispatch,useSelector} from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
 //Helper
 import { enTofn, ifExist } from "../../helper/functions";
@@ -7,10 +7,10 @@ import { enTofn, ifExist } from "../../helper/functions";
 //Redux
 import { addItems } from "../../../features/cartSlice";
 
-
 const Sellerdetail = ({ scale, price, productInfo }) => {
-  const dispatch = useDispatch()
-  const state= useSelector(state=>state.cart);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.cart);
+  const color = useSelector((state) => state.color.color);
 
   return (
     <React.Fragment>
@@ -104,12 +104,12 @@ const Sellerdetail = ({ scale, price, productInfo }) => {
             </div>
             <div className="mt-10">
               <div className="text mb-4 w-full text-center text-xl font-bold text-orange-500">{enTofn(price)} تومان</div>
-              {ifExist(state.selectedItems, productInfo) ? (
+              {ifExist(state.selectedItems, { ...productInfo, color }) ? (
                 <button className="w-full rounded-md border border-orange-500 bg-transparent py-4 text-lg text-orange-500">موجود در سبد خرید</button>
               ) : (
                 <button
                   onClick={() => {
-                    dispatch(addItems(productInfo));
+                    dispatch(addItems({ ...productInfo, color }));
                   }}
                   className="w-full rounded-md bg-orange-500 py-4 text-lg text-white"
                 >

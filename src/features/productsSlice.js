@@ -8,6 +8,11 @@ const initialState = {
   products: [],
 };
 
+const getInitialState = () => {
+  const filter = sessionStorage.getItem("products");
+  return filter ? JSON.parse(filter) : initialState;
+};
+
 const fetchProducts = createAsyncThunk("products/fetchProducts", async (thunkAPI) => {
   try {
     const response = await axios.get("https://6472db22d784bccb4a3c0da1.mockapi.io/products");
@@ -19,7 +24,7 @@ const fetchProducts = createAsyncThunk("products/fetchProducts", async (thunkAPI
 
 const productsSlice = createSlice({
   name: "products",
-  initialState,
+  initialState: getInitialState(),
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -28,12 +33,14 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
         state.products = action.payload;
+        sessionStorage.setItem("products", JSON.stringify(state));
         state.error = "";
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         console.log(action.payload);
         state.loading = false;
         state.products = [];
+        sessionStorage.setItem("products", JSON.stringify(state));
         state.error = action.error.message;
       });
   },

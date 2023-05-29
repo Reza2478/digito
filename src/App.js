@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home active={active} setActive={setActive} />} />
         <Route path="/products/:id" element={<Productdetail />} />
-        {/* <Route path="/category" element={<Category />} />
-        <Route path="/shopcart" element={<Shopcart />} /> */}
+        <Route path="/category" element={<Category />} />
+        <Route path="/shopcart" element={<Shopcart />} />
       </Routes>
       <BottomNav active={active} />
       <Footer />

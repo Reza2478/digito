@@ -1,14 +1,14 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-//Context
-import { CartContext } from "../../../Context/CartContextProvider";
+//Redux
 
 //Helper
 import { enTofn } from "../../helper/functions";
 
 const Totalprice = () => {
   const [visible, setVisible] = useState(false);
-  const {state}=useContext(CartContext)
+  const state = useSelector((state) => state.cart);
 
   return (
     <div className=" flex flex-col justify-center gap-y-6 rounded-md bg-white p-4">
@@ -19,7 +19,11 @@ const Totalprice = () => {
       <div className=" flex items-center justify-between text-slate-800">
         <p className="">کد تخفیف :</p>
         <div className="mr-5  flex items-center justify-between rounded-md bg-stone-100 ">
-          <input type="text" placeholder="123ABC" className=" w-full border-transparent bg-transparent p-0 text-center text-slate-800 focus:border-transparent focus:outline-none focus:ring-0"></input>
+          <input
+            type="text"
+            placeholder="123ABC"
+            className=" w-full border-transparent bg-transparent p-0 text-center text-slate-800 focus:border-transparent focus:outline-none focus:ring-0"
+          ></input>
           <button
             onClick={() => {
               setVisible(true);
@@ -34,12 +38,12 @@ const Totalprice = () => {
         <div>
           <div className="flex items-center justify-between">
             <p>تخفیف : </p>
-            <p className="font-bold text-orange-500">4500000 تومان</p>
+            <p className="font-bold text-orange-500">{enTofn(4500000)} تومان</p>
           </div>
           <div className="mt-4 flex items-center justify-between">
             <p>قیمت نهایی : </p>
-            <p className="font-bold text-orange-500">4500000 تومان</p>
-          </div>{" "}
+            <p className="font-bold text-orange-500">{enTofn(4500000)} تومان</p>
+          </div>
         </div>
       )}
     </div>

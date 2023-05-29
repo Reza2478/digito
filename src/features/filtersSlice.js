@@ -26,23 +26,26 @@ const filtersSilce = createSlice({
       sessionStorage.setItem("filters", JSON.stringify(state));
     },
     colors: (state, action) => {
-      action.payload.check
-        ? state.colors.push(action.payload.name)
-        : (state.colors = state.colors.filter((item) => item !== action.payload.name));
+      action.payload.check ? state.colors.push(action.payload.name) : (state.colors = state.colors.filter((item) => item !== action.payload.name));
       sessionStorage.setItem("filters", JSON.stringify(state));
     },
     brands: (state, action) => {
-      action.payload.check
-        ? state.brands.push(action.payload.name)
-        : (state.brands = state.brands.filter((item) => item !== action.payload.name));
+      action.payload.check ? state.brands.push(action.payload.name) : (state.brands = state.brands.filter((item) => item !== action.payload.name));
       sessionStorage.setItem("filters", JSON.stringify(state));
     },
     price: (state, action) => {
       state.priceRange = { min: action.payload.min, max: action.payload.max };
       sessionStorage.setItem("filters", JSON.stringify(state));
     },
+    clear: (state) => {
+      state.input = "";
+      state.category = "all";
+      state.brands = [];
+      state.priceRange = { min: 0, max: 100 };
+      state.colors = [];
+    },
   },
 });
 
 export default filtersSilce.reducer;
-export const { searchInput, categories, colors, brands, price } = filtersSilce.actions;
+export const { searchInput, categories, colors, brands, price, clear } = filtersSilce.actions;

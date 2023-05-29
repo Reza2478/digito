@@ -1,9 +1,9 @@
 export const textSplitter = (value) => {
   const textArray = value.split(" ");
   let result = "";
-  if (textArray.length > 10) {
-    for (let i = 0; i < 10; i++) {
-      if (i === 9) result += `${textArray[i]} ...`;
+  if (textArray.length > 7) {
+    for (let i = 0; i < 7; i++) {
+      if (i === 6) result += `${textArray[i]} ...`;
       else result += `${textArray[i]} `;
     }
     return result;

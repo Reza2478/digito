@@ -1,4 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+//Redux
+import { categories, clear } from "../features/filtersSlice";
 
 //Component
 import Appbar from "../Components/header/Appbar";
@@ -15,10 +20,17 @@ import Asus from "../assets/images/categories/asus.png";
 import Microsoft from "../assets/images/categories/microsoft.png";
 import Hp from "../assets/images/categories/hp.png";
 
+const clickHandler =(dispatch)=>{
+  dispatch(clear())
+  dispatch(categories('all'))
+}
+
 const Category = () => {
+  const dispatch=useDispatch()
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mb-20 ">
       <Appbar />
+      <Link to='/' onClick={()=>{clickHandler(dispatch)}} className="p-4 bg-orange-400 text-white shadow-md text-center">مشاهده تمام محصولات</Link>
       <Section
         Cluster="mobile"
         Image={Phone}

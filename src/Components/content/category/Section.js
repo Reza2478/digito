@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 //Components
 import Links from "./Links";
 
-//Context
-import { FilterContext } from "../../../Context/FilterContextProvider";
+//Redux
+import { categories, clear } from "../../../features/filtersSlice";
 
-
-const clickHandler = (state,dispatch,cluster)=>{
-   state.brands=[]
-  dispatch({ type: "CATEGORY", payload: cluster })
-}
+const clickHandler = (dispatch, cluster) => {
+  dispatch(clear());
+  dispatch(categories(cluster));
+};
 
 const Section = ({ Image, CatName, Categories, Cluster }) => {
-  const { state,dispatch } = useContext(FilterContext);
+  const dispatch = useDispatch();
 
   return (
     <div className="relative my-8  flex items-end text-slate-700 ">
@@ -30,7 +30,7 @@ const Section = ({ Image, CatName, Categories, Cluster }) => {
         </div>
       </div>
 
-      <Link to="/" onClick={() => clickHandler(state,dispatch, Cluster)} className=" absolute top-1 left-3 text-orange-500">
+      <Link to="/" onClick={() => clickHandler(dispatch, Cluster)} className=" absolute top-1 left-3 text-orange-500">
         مشاهده همه
       </Link>
     </div>

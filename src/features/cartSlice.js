@@ -4,7 +4,7 @@ const initialState = {
   selectedItems: [],
   total: 0,
   checkout: false,
-  itemscounter: 0,
+  itemsCounter: 0,
 };
 
 const sumItems = (data) => {
@@ -31,7 +31,8 @@ const cartSlice = createSlice({
           quantity: 1,
         });
       }
-      sumItems(state.selectedItems);
+      state.total=sumItems(state.selectedItems).total;
+      state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
       state.checkout = false;
       localStorage.setItem("cart", JSON.stringify(state));
     },
@@ -39,7 +40,8 @@ const cartSlice = createSlice({
     increase: (state, action) => {
       const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
       state.selectedItems[index].quantity++;
-      sumItems(state.selectedItems);
+      state.total=sumItems(state.selectedItems).total;
+      state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
       state.checkout = false;
       localStorage.setItem("cart", JSON.stringify(state));
     },
@@ -47,7 +49,8 @@ const cartSlice = createSlice({
     decrease: (state, action) => {
       const index = state.selectedItems.findIndex((item) => item.id === action.payload.id);
       state.selectedItems[index].quantity--;
-      sumItems(state.selectedItems);
+      state.total=sumItems(state.selectedItems).total;
+      state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
       state.checkout = false;
       localStorage.setItem("cart", JSON.stringify(state));
     },
@@ -55,7 +58,8 @@ const cartSlice = createSlice({
     remove: (state, action) => {
       const newSelectedItem = state.selectedItems.filter((item) => item.id !== action.payload.id);
       state.selectedItems = newSelectedItem;
-      sumItems(newSelectedItem);
+      state.total=sumItems(state.selectedItems).total;
+      state.itemsCounter=sumItems(state.selectedItems).itemsCounter;
       state.checkout = false;
       localStorage.setItem("cart", JSON.stringify(state));
     },

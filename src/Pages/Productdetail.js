@@ -10,8 +10,6 @@ import Breadcrumbs from "../Components/content/product/Breadcrumbs";
 import Information from "../Components/content/product/Information";
 import Addbtn from "../Components/content/product/Addbtn";
 
-//Context
-import { productsContext } from "../Context/ProductContextProvider";
 
 const Productdetail = () => {
   const { id } = useParams();
@@ -25,10 +23,10 @@ const Productdetail = () => {
       <Navbar />
       <div className="container mx-auto mb-9 grid max-w-screen-2xl grid-cols-12 gap-4 md:grid-rows-[55px_minmax(500px,_1fr)] md:px-4 lg:px-6">
         <Advertising />
-        <Breadcrumbs />
+        <Breadcrumbs productInfo={product}/>
         <Information productInfo={product} />
       </div>
-      {/* <Addbtn productInfo={product} /> */}
+      <Addbtn productInfo={product} />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const dispatch  = useDispatch()
-  // const { state } = useContext(CartContext);
+  const state=useSelector(state=>state.cart)
 
   const inputHandler = async (e) => {
     await dispatch(searchInput(e.target.value));
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div className="relative mr-4">
           <Link to="/shopcart">
-            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-2 text-white">0</span>
+            <span className="absolute bottom-6 right-[-7px] z-50 flex items-center justify-center rounded-full bg-slate-700 px-2 text-white">{state.itemsCounter}</span>
             <img className="ml-4 w-10 cursor-pointer drop-shadow-md" src={Shopicon} alt="shopcart" />
           </Link>
         </div>

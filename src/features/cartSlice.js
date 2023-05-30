@@ -69,8 +69,15 @@ const cartSlice = createSlice({
       state.checkout = true;
       localStorage.setItem("cart", JSON.stringify(state));
     },
+    clear:(state)=>{
+      state.selectedItems = [];
+      state.itemsCounter = 0;
+      state.total = 0;
+      state.checkout = false;
+      localStorage.setItem("cart", JSON.stringify(state));
+    }
   },
 });
 
 export default cartSlice.reducer;
-export const { checkout, addItems, remove, decrease, increase } = cartSlice.actions;
+export const { checkout, addItems, remove, decrease, increase ,clear } = cartSlice.actions;

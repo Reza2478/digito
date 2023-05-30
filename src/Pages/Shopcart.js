@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 //Component
 import Appbar from "../Components/header/Appbar";
@@ -12,9 +12,12 @@ import Operationbtn from "../Components/content/shopcart/Operationbtn";
 //Images
 import Shopping from "../assets/images/shopping.png";
 
+//Redux
+import { clear } from "../features/cartSlice";
+
 const Shopcart = () => {
   const state = useSelector((state) => state.cart);
-
+  const dispatch =useDispatch()
   return (
     <div>
       <Appbar />
@@ -51,7 +54,7 @@ const Shopcart = () => {
               <p className="mb-16 text-2xl font-bold text-slate-700 md:text-3xl">با تشکر از خرید شما</p>
               <img className="w-1/2" src={Shopping} alt="shopping" />
             </div>
-            <Link onClick={() => (state.checkout = false)} to="/" className="mt-6 cursor-pointer rounded-md bg-orange-400 p-4 text-white shadow-md md:text-lg lg:text-xl">
+            <Link onClick={() => dispatch(clear())} to="/" className="mt-6 cursor-pointer rounded-md bg-orange-400 p-4 text-white shadow-md md:text-lg lg:text-xl">
               رفتن به صفحه محصولات
             </Link>
           </div>

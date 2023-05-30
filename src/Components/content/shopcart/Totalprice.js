@@ -19,11 +19,7 @@ const Totalprice = () => {
       <div className=" flex items-center justify-between text-slate-800">
         <p className="">کد تخفیف :</p>
         <div className="mr-5  flex items-center justify-between rounded-md bg-stone-100 ">
-          <input
-            type="text"
-            placeholder="123ABC"
-            className=" w-full border-transparent bg-transparent p-0 text-center text-slate-800 focus:border-transparent focus:outline-none focus:ring-0"
-          ></input>
+          <input type="text" placeholder="123ABC" className=" w-full border-transparent bg-transparent p-0 text-center text-slate-800 focus:border-transparent focus:outline-none focus:ring-0"></input>
           <button
             onClick={() => {
               setVisible(true);

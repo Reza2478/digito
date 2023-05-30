@@ -26,7 +26,7 @@ const Content = () => {
   const filteredProducts = searchFilter(filters, state.products);
 
   return (
-    <div className="container mx-auto mb-32 md:mb-9 grid max-w-screen-2xl grid-cols-12 gap-4 md:px-4 lg:px-6">
+    <div className="container mx-auto mb-32 grid max-w-screen-2xl grid-cols-12 gap-4 md:mb-9 md:px-4 lg:px-6">
       <Sidebar />
       {state.loading ? (
         <div className="col-span-12 flex h-[100vh] items-center justify-center md:col-span-8 lg:col-span-9 xl:col-span-10">

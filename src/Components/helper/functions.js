@@ -102,9 +102,7 @@ export const searchFilter = (state, products) => {
 };
 
 export const colorExtraction = (item) => {
-  console.log("Hello");
   const result = item.split("bg-");
-  console.log(result[1]);
   return result[1];
 };
 
@@ -113,7 +111,6 @@ export const enTofn = (price) => {
 };
 
 export const ifExist = (list, product) => {
-  console.log({ product });
   const index = list.findIndex((i) => i.id === product.id);
   const color = list.findIndex((i) => i.color === product.color);
 

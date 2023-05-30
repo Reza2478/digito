@@ -3,7 +3,6 @@ import React from "react";
 //Component
 import Filters from "./content/sidebar/Filters";
 
-
 const Filtersection = ({ setActive, active }) => {
   return (
     <div className={` sticky bottom-0 z-50 rounded-t-3xl bg-stone-50 shadow-lg md:hidden ${active ? "block" : "hidden"} `}>

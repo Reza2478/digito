@@ -37,7 +37,6 @@ const productsSlice = createSlice({
         state.error = "";
       })
       .addCase(fetchProducts.rejected, (state, action) => {
-        console.log(action.payload);
         state.loading = false;
         state.products = [];
         sessionStorage.setItem("products", JSON.stringify(state));

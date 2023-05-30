@@ -1,6 +1,6 @@
 import React from "react";
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
   return (
     <div className="mb-8 text-center md:text-right">
       <h1 className="mb-1 text-lg font-bold text-slate-800 md:mb-2 md:text-xl">{title.model}</h1>

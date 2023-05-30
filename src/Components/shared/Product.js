@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //Helper
-import { textSplitter,toInteger,colorConverter } from "../helper/functions";
-
+import { textSplitter, toInteger, colorConverter } from "../helper/functions";
 
 const Product = ({ productData }) => {
   const { id, brand, colors, images, price, model } = productData;
@@ -12,7 +11,6 @@ const Product = ({ productData }) => {
       {/*image section*/}
       <div className="relative m-1 rounded-lg bg-slate-200">
         <img className="w-full px-9 py-3" src={images[0]} alt={id} />
-        
       </div>
       {/*color information*/}
 
@@ -34,7 +32,9 @@ const Product = ({ productData }) => {
         <span className="mr-1 text-xs text-orange-700 sm:text-sm">تومان</span>
       </div>
       <hr className="mx-2" />
-      <Link to={`/products/${id}`} className="w-full py-2 text-center text-sm font-bold text-orange-400 sm:text-lg">مشاهده محصول</Link>
+      <Link to={`/products/${id}`} className="w-full py-2 text-center text-sm font-bold text-orange-400 sm:text-lg">
+        مشاهده محصول
+      </Link>
     </div>
   );
 };

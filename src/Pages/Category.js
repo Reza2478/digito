@@ -20,17 +20,25 @@ import Asus from "../assets/images/categories/asus.png";
 import Microsoft from "../assets/images/categories/microsoft.png";
 import Hp from "../assets/images/categories/hp.png";
 
-const clickHandler =(dispatch)=>{
-  dispatch(clear())
-  dispatch(categories('all'))
-}
+const clickHandler = (dispatch) => {
+  dispatch(clear());
+  dispatch(categories("all"));
+};
 
 const Category = () => {
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   return (
-    <div className="flex flex-col mb-20 ">
+    <div className="mb-20 flex flex-col ">
       <Appbar />
-      <Link to='/' onClick={()=>{clickHandler(dispatch)}} className="p-4 bg-orange-400 text-white shadow-md text-center">مشاهده تمام محصولات</Link>
+      <Link
+        to="/"
+        onClick={() => {
+          clickHandler(dispatch);
+        }}
+        className="bg-orange-400 p-4 text-center text-white shadow-md"
+      >
+        مشاهده تمام محصولات
+      </Link>
       <Section
         Cluster="mobile"
         Image={Phone}

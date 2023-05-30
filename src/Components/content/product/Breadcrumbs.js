@@ -11,13 +11,13 @@ const typeModel = (model) => {
 
 const selectFilter = (model, brand, dispatch) => {
   if (model === "تلفن همراه") {
-    brand ? dispatch(brands({name:brand,check:true})) : dispatch(clear());
+    brand ? dispatch(brands({ name: brand, check: true })) : dispatch(clear());
     dispatch(categories("mobile"));
   } else if (model === "لپ تاپ") {
-    brand ? dispatch(brands({name:brand,check:true})) : dispatch(clear());
+    brand ? dispatch(brands({ name: brand, check: true })) : dispatch(clear());
     dispatch(categories("laptop"));
   } else {
-    brand ? dispatch(brands({name:brand,check:true})) : dispatch(clear());
+    brand ? dispatch(brands({ name: brand, check: true })) : dispatch(clear());
     dispatch(categories("watch"));
   }
 };
@@ -27,7 +27,7 @@ const Breadcrumbs = ({ productInfo }) => {
   return (
     <div className="col-span-12 md:col-span-8 lg:col-span-10 xl:col-span-10">
       <div className="mb-6 flex h-14 items-center rounded-md px-4 md:bg-white">
-        <Link to="/" onClick={() => selectFilter(typeModel(productInfo.model),0, dispatch)} className="cursor-pointer text-sm text-orange-400 md:text-base">
+        <Link to="/" onClick={() => selectFilter(typeModel(productInfo.model), 0, dispatch)} className="cursor-pointer text-sm text-orange-400 md:text-base">
           {typeModel(productInfo.model)}
         </Link>
         <span>

@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {useDispatch,useSelector} from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
 //Redux
-import { searchInput } from "../../features/filtersSlice"; 
+import { searchInput } from "../../features/filtersSlice";
 
 //Images
 import Shopicon from "../../assets/images/shopping-cart.png";
 import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
-  const dispatch  = useDispatch()
-  const state=useSelector(state=>state.cart)
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.cart);
 
   const inputHandler = async (e) => {
     await dispatch(searchInput(e.target.value));

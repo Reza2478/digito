@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -13,15 +13,10 @@ const clickHandler = (state, dispatch, item, cluster) => {
 };
 
 const Links = ({ item, cluster }) => {
-
-  const dispatch =useDispatch();
-  const state =useSelector(state=>state.filters)
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.filters);
   return (
-    <Link
-      to="/"
-      onClick={() => clickHandler(state, dispatch, item, cluster)}
-      className="mx-2 mt-20 flex  flex-col items-center justify-between rounded-xl bg-white p-6 shadow-md"
-    >
+    <Link to="/" onClick={() => clickHandler(state, dispatch, item, cluster)} className="mx-2 mt-20 flex  flex-col items-center justify-between rounded-xl bg-white p-6 shadow-md">
       <img className="mb-4 w-20" src={item.image} alt="catName" />
       <p>{item.brand}</p>
     </Link>

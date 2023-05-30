@@ -23,7 +23,7 @@ const Shopcart = () => {
       <Appbar />
       <Navbar />
       {!state.checkout ? (
-        <div className="container mx-auto mb-9 grid max-w-screen-2xl grid-cols-12 gap-4  md:px-4 ">
+        <div className="container mx-auto mb-24 md:mb-9 grid max-w-screen-2xl grid-cols-12 gap-4  md:px-4 ">
           <div className="col-span-12 mt-10 flex flex-col px-4 md:col-span-8">
             {state.selectedItems.length === 0 && (
               <div className="flex w-full flex-col items-center justify-center text-center text-gray-400">

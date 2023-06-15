@@ -8,6 +8,7 @@ import Productdetail from "./Pages/Productdetail";
 import Shopcart from "./Pages/Shopcart";
 import BottomNav from "./Components/content/BottomNav";
 import Footer from "./Components/content/Footer";
+import AdminPanel from "./Pages/adminPanel";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -19,9 +20,10 @@ function App() {
         <Route path="/products/:id" element={<Productdetail />} />
         <Route path="/category" element={<Category />} />
         <Route path="/shopcart" element={<Shopcart />} />
+        <Route path="/adminpanel" element={<AdminPanel />} />
       </Routes>
       <BottomNav active={active} />
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 }

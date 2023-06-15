@@ -5,6 +5,7 @@ import productsReducer from "../features/productsSlice";
 import filtersReducer from "../features/filtersSlice";
 import cartReducer from "../features/cartSlice";
 import colorReducer from "../features/colorSelectedSlice";
+import featureReducer from '../features/productFeatureSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     filters: filtersReducer,
     cart: cartReducer,
     color: colorReducer,
+    features : featureReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

@@ -4,7 +4,6 @@ const initialState = {
   category: "",
   subcategory: "",
   brands: [],
-  colors: [],
   features: [],
 };
 
@@ -12,27 +11,30 @@ const productFeatureSlice = createSlice({
   name: "feature",
   initialState,
   reducers: {
-    addCategry: (state, action) => {
-        console.log(action.payload);
+    setCategry: (state, action) => {
       state.category = action.payload;
+      state.subcategory=''
     },
-    addSubCategory: (state, action) => {
-        console.log(action.payload);
+    setSubCategory: (state, action) => {
       state.subcategory = action.payload;
     },
     addBrands: (state, action) => {
-        console.log(action.payload);
       state.brands.push(action.payload);
     },
-    addColors: (state, action) => {
-        console.log(action.payload);
-      state.colors.push(action.payload);
-    },
+
     addFeatures: (state, action) => {
       state.features.push(action.payload);
+    },
+    removeBrand: (state, action) => {
+      const newBrands = state.brands.filter((item) => item !== action.payload);
+      state.brands = newBrands;
+    },
+    removeFeature: (state, action) => {
+      const newFeatures = state.features.filter((item) => item !== action.payload);
+      state.features = newFeatures;
     },
   },
 });
 
 export default productFeatureSlice.reducer;
-export const { addBrands, addCategry, addSubCategory, addColors, addFeatures } = productFeatureSlice.actions;
+export const { addBrands, setCategry, setSubCategory, addFeatures, removeBrand, removeFeature  } = productFeatureSlice.actions;

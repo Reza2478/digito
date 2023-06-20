@@ -3,8 +3,8 @@ import { ChevronUpDownIcon, PlusCircleIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 
 //Redux
-import { setCategry, setSubCategory } from "../../../features/productFeatureSlice";
-import { addToCategories, addToSubcategories } from "../../../features/productCategorySlice";
+import { setCategry, setSubCategory } from "../../../features/panelFeatureSlice";
+import { addToCategories, addToSubcategories } from "../../../features/panelCategorySlice";
 
 const List = ({ type, categories }) => {
   const [selected, setSelected] = useState("- - -");

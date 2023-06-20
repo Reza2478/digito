@@ -5,8 +5,9 @@ import productsReducer from "../features/productsSlice";
 import filtersReducer from "../features/filtersSlice";
 import cartReducer from "../features/cartSlice";
 import colorReducer from "../features/colorSelectedSlice";
-import featureReducer from "../features/productFeatureSlice";
-import categoriesReducer from "../features/productCategorySlice";
+import featureReducer from "../features/panelFeatureSlice";
+import categoriesReducer from "../features/panelCategorySlice";
+import colorsReducer from "../features/panelColorSlice";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     color: colorReducer,
     features: featureReducer,
     categories: categoriesReducer,
+    colors: colorsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { PlusCircleIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
-//Redux
-import {  } from "../../../features/productFeatureSlice";
 
 const Specification = ({ features, addFn, removeFn }) => {
   const [value, setValue] = useState("");
@@ -27,7 +25,7 @@ const Specification = ({ features, addFn, removeFn }) => {
     <div className="mb-4 flex flex-col">
       <div className="flex flex-col">
         <div className="flex">
-          <input className="border-b-2 bg-transparent py-1 text-sm  focus:outline-none" placeholder="آیتم مدنظر را وارد کنید" value={value} onChange={changeHandler} />
+          <input className="border-b-2 bg-transparent py-1 text-sm  focus:outline-none" placeholder="آیتم مدنظر را وارد کنید" value={value} onChange={changeHandler} />          
           <PlusCircleIcon className={`${value === "" && "opacity-50"} h-7 w-7 cursor-pointer text-orange-500 drop-shadow-sm transition-all hover:text-red-300`} onClick={addItem} />
         </div>
         <div className="flex items-center gap-x-2 overflow-auto py-3">
